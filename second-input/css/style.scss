@@ -1,0 +1,50 @@
+@import '_variables.scss';
+@import url('https://fonts.googleapis.com/css2?family=Rowdies:wght@300;400;700&display=swap');
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font: 100% $font-common;
+}
+
+section {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #FF002C;
+        transition: 0.5s;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 20vw;
+        font-weight: 700;
+        word-spacing: nowrap;
+        user-select: none;
+        -webkit-user-select: none;
+        color: rgba(0, 0, 0, 0.1);
+    }
+    .selectColor {
+        position: relative;
+        padding: 10px;
+        border: none;
+        border-right: 10px solid white;
+        outline: none;
+        width: 200px;
+        border-radius: 4px;
+        box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+    }
+    select[open] {
+        background-color: rgb(71, 217, 8);
+    }
+}
