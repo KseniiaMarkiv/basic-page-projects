@@ -34,7 +34,7 @@ section .bg {
    -ms-user-select: none;
        user-select: none;
   -webkit-user-select: none;
-  color: rgba(0, 0, 0, 0.1);
+  color: rgba(0, 0, 0, 0.2);
 }
 section .selectColor {
   position: relative;

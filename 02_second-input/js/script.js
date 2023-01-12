@@ -5,4 +5,5 @@ function changeColor(getColor) {
 
     bg.style.background = selectColor;
     bg.innerHTML = text;
+
 }
