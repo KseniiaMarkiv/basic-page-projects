@@ -179,6 +179,7 @@ div.modal {
                 a {
                     font-family: Arial, Helvetica, sans-serif;
                     color: gray;
+                    font-size: 12px;
                 }
             }
             @include devices(smallDevices) {
@@ -249,8 +250,14 @@ main {
         left: 0;
         width: 100%;
         height: 100%;
-        background: transparent;
-        backdrop-filter: blur(54px);
+        // it's doing only new version of browsers
+        // background: transparent;
+        // -webkit-backdrop-filter: blur(54px);
+        // backdrop-filter: blur(54px);
+        // it's the best way doing the same effect (look also blobs objects)
+        background-color: rgba(255, 255, 255, 0.2);
+        filter: blur(8px);
+        -webkit-filter: blur(8px);
         z-index: 4;
     }
     button {
@@ -260,7 +267,7 @@ main {
         z-index: 5;
         display: grid;
         padding: 15px 65px;
-        border-radius: 13px;
+        border-radius: 10px;
         transition: 2s;
         border: 2px solid rgb(63, 94, 251);
         background: transparent;
@@ -326,6 +333,9 @@ main {
                 max-width: 400px;
                 position: absolute;
                 height: auto;
+                // it's the best way doing the same effect
+                filter: blur(38px);
+                -webkit-filter: blur(38px);
             }
         }
         .blob1,
