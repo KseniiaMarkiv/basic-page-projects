@@ -24,3 +24,10 @@ Implemented responsive style of input using:
 Implemented responsive style of animated blob objects on a basic page:
 - HTML
 - CSS (Scss)
+- JS
+
+Also made an improvement to the landing page:
+- performance;
+- assessability;
+- best practices and 
+- SEO;
