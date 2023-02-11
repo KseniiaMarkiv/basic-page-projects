@@ -5,38 +5,81 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#bc13fe" />
+    <meta name="description" content="I realized animation blobs background with a navbar and a modal window">
     <title>Blob background</title>
     <link rel="stylesheet" href="css/style.css">
+
 </head>
 
 <body>
-    <main>
+    <div class="bg"></div>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Clients</a>
+        <a href="#">Contact</a>
+    </div>
+    <div class="nav-btn" onclick="openNav()">
+        <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><title>Grid</title><rect x="48" y="48" width="176" height="176" rx="20" ry="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/><rect x="288" y="48" width="176" height="176" rx="20" ry="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/><rect x="48" y="288" width="176" height="176" rx="20" ry="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/><rect x="288" y="288" width="176" height="176" rx="20" ry="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/></svg>
+        <span>open</span>
+    </div>
+
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">&times;</span>
+                <h2>Modal Header</h2>
+            </div>
+            <div class="modal-body">
+                <p>Some text in the Modal Body....</p>
+                <p>
+                    <a href="">Some other text... like a link </a>
+                </p>
+            </div>
+            <div class="modal-footer">
+                <h3>Modal Footer</h3>
+            </div>
+        </div>
+
+    </div>
+
+
+    <main id="main">
         <div class="blur"></div>
         <div class="text">
             <span>ABSTRACT<br/> BACKGROUND</span>
         </div>
-        <button>
+        <button id="myBtn">
           <span>Explore</span>
           <span>Explore</span>
         </button>
         <section>
             <div class="blob1">
-                <img src="css/imgs/blob-purple.png" alt="First blob image">
+                <img src="css/imgs/blob-purple.webp" alt="First blob image">
             </div>
             <div class="blob2">
-                <img src="css/imgs/blob-blue.png" alt="Second blob image">
+                <img src="css/imgs/blob-blue.webp" alt="Second blob image">
             </div>
             <div class="blob3">
-                <img src="css/imgs/blob-green.png" alt="Third blob image">
+                <img src="css/imgs/blob-green.webp" alt="Third blob image">
             </div>
             <div class="blob4">
-                <img src="css/imgs/blob-orange.png" alt="Fourth blob image">
+                <img src="css/imgs/blob-orange.webp" alt="Fourth blob image">
             </div>
         </section>
         <div class="link">Image by <a href="https://www.freepik.com/free-vector/abstract-liquid-banners_4066409.htm#from_view=detail_alsolike">Freepik</a>
         </div>
 
     </main>
+
+    <script src="js/script.min.js"></script>
+
 </body>
 
 </html>

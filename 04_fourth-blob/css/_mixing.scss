@@ -1,0 +1,156 @@
+// MEDIA QUERIES
+// using so: 
+// @include devices(smallDevices) {}
+@mixin devices ($breakpoint) {
+    @if $breakpoint==xxLargeDevices {
+        @media only screen and (max-width: 1400px) {
+            @content;
+        }
+    }
+    @if $breakpoint==xLargeDevices {
+        @media only screen and (max-width: 1200px) {
+            @content;
+        }
+    }
+    @if $breakpoint==largeDevices {
+        @media only screen and (max-width: 992px) {
+            @content;
+        }
+    }
+    @if $breakpoint==mediumDevices {
+        @media only screen and (max-width: 768px) {
+            @content;
+        }
+    }
+    @if $breakpoint==smallDevices {
+        @media only screen and (max-width: 576px) {
+            @content;
+        }
+    }
+    @if $breakpoint==xSmallDevices {
+        @media only screen and (max-width: 435px) {
+            @content;
+        }
+    }
+}
+
+// transform2D on different browsers
+// using so 
+// @include transform(scaleX(1.1));
+@mixin transform($property) {
+    -webkit-transform: $property;
+    -moz-transform: $property;
+    -ms-transform: $property;
+    -o-transform: $property;
+    transform: $property;
+}
+
+@mixin transition($property) {
+    -webkit-transition: $property;
+    -moz-transition: $property;
+    -ms-transition: $property;
+    -o-transition: $property;
+    transition: $property;
+}
+
+@mixin user-select($property) {
+    -webkit-user-select: $property;
+    -moz-user-select: $property;
+    -ms-user-select: $property;
+    -o-user-select: $property;
+    user-select: $property;
+}
+
+// ANIMATION
+@mixin animation($property) {
+    -webkit-animation: $property;
+    -moz-animation: $property;
+    -o-animation: $property;
+    animation: $property;
+}
+
+// how it use 
+// @include keyframes(animation-name) {
+//   0% {
+//     #{$browser}transform: translate3d(100%, 0, 0);
+// }
+// 100% {
+//    #{$browser}transform: translate3d(0%, 0, 0);
+// }
+// } 
+// ALSO
+// @include keyframes(fadeInFromNone) {
+//   0% {
+//       opacity: 0;
+//   }
+//   100% {
+//       opacity: 1;
+//   }
+// }
+@mixin keyframes($animationName) {
+    @-webkit-keyframes #{$animationName} {
+        $browser: '-webkit-' !global;
+        @content;
+    }
+    @-moz-keyframes #{$animationName} {
+        $browser: '-moz-' !global;
+        @content;
+    }
+    @-o-keyframes #{$animationName} {
+        $browser: '-o-' !global;
+        @content;
+    }
+    @keyframes #{$animationName} {
+        $browser: '' !global;
+        @content;
+    }
+}
+
+$browser: null;
+// using so:
+// @include linear-gradient(to bottom, #ff0000, #0000ff);
+@mixin linear-gradient($direction, $color-stops...) {
+    background: linear-gradient($direction, $color-stops);
+    background: -webkit-linear-gradient($direction, $color-stops);
+    background: -moz-linear-gradient($direction, $color-stops);
+    background: -o-linear-gradient($direction, $color-stops);
+    background: -ms-linear-gradient($direction, $color-stops);
+}
+
+// @include border-linear-gradient(to bottom, #ff0000, #0000ff) 1 / 5px 5px;
+@mixin border-linear-gradient($slice, $direction, $color-stops...) {
+    border-image: linear-gradient($direction, $color-stops) $slice;
+    border-image: -webkit-linear-gradient($direction, $color-stops) $slice;
+    border-image: -moz-linear-gradient($direction, $color-stops) $slice;
+    border-image: -o-linear-gradient($direction, $color-stops) $slice;
+    border-image: -ms-linear-gradient($direction, $color-stops) $slice;
+}
+
+@mixin conic-gradient($direction, $color-stops...) {
+    background: conic-gradient($direction, $color-stops);
+    background: -webkit-conic-gradient($direction, $color-stops);
+    background: -moz-conic-gradient($direction, $color-stops);
+    background: -o-conic-gradient($direction, $color-stops);
+    background: -ms-conic-gradient($direction, $color-stops);
+}
+
+@mixin box-sizing($property) {
+    -webkit-box-sizing: $property;
+    -moz-box-sizing: $property;
+    -ms-box-sizing: $property;
+    -o-box-sizing: $property;
+    box-sizing: $property;
+}
+
+@mixin box-shadow($property...) {
+    -webkit-box-shadow: $property;
+    -moz-box-shadow: $property;
+    box-shadow: $property;
+}
+
+// using it
+// @include important;
+@mixin important {
+    margin: 0;
+    padding: 0;
+}
